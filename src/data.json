@@ -1,0 +1,118 @@
+{
+  "sensors": [
+    {
+      "id": 1,
+      "name": "move",
+      "description": "Sensor on the front door",
+      "type": "Sensor",
+      "status": "on"
+    },
+    {
+      "id": 2,
+      "name": "light",
+      "description": "Sensor in the living room",
+      "type": "Sensor",
+      "status": "off"
+    },
+    {
+      "id": 3,
+      "name": "move",
+      "description": "Sensor on the main room(Bedroom 1)",
+      "type": "Sensor",
+      "status": "off"
+    },
+    {
+      "id": 4,
+      "name": "fume",
+      "description": "Sensor on the kitchen",
+      "type": "Sensor",
+      "status": "off"
+    }
+  ],
+  "subscribers": [
+    {
+      "id": 1,
+      "name": "light living room",
+      "description": "Device in the living room",
+      "type": "Device",
+      "subscriber": "True",
+      "status": "off",
+      "sensorId": 1
+    },
+    {
+      "id": 2,
+      "name": "TV living room",
+      "description": "Device in the living room",
+      "type": "Device",
+      "subscriber": "True",
+      "status": "off",
+      "sensorId": 1
+    },
+    {
+      "id": 3,
+      "name": "Lamp living room",
+      "description": "Device in the living room",
+      "type": "Device",
+      "subscriber": "True",
+      "status": "off",
+      "sensorId": 1
+    },
+    {
+      "id": 4,
+      "name": "Lamp Bedroom 1",
+      "description": "Device in the Bedroom 1",
+      "type": "Device",
+      "subscriber": "True",
+      "status": "off",
+      "sensorId": 3
+    },
+    {
+      "id": 5,
+      "name": "curtain living room",
+      "description": "Device in the window of the living room",
+      "type": "Device",
+      "subscriber": "True",
+      "status": "off",
+      "sensorId": 2
+    },
+    {
+      "id": 6,
+      "name": "curtain Bedroom 1",
+      "description": "Device in the window of the Bedroom 1",
+      "type": "Device",
+      "subscriber": "True",
+      "status": "off",
+      "sensorId": 2
+    },
+    {
+      "id": 7,
+      "name": "curtain kitchen",
+      "description": "Device in the window of kitchen",
+      "type": "Device",
+      "subscriber": "True",
+      "status": "off",
+      "sensorId": 2
+    },
+    {
+      "id": 8,
+      "name": "fire alarm",
+      "description": "Device of the house",
+      "type": "Device",
+      "subscriber": "True",
+      "status": "off",
+      "sensorId": 4
+    },
+    {
+      "id": 9,
+      "name": "fire email",
+      "description": "Email sends to fire team",
+      "type": "Email",
+      "subscriber": "True",
+      "status": "off",
+      "sensorId": 4,
+      "email": "fire@template.com"
+    }
+
+
+  ]
+}
