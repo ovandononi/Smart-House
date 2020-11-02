@@ -1,0 +1,121 @@
+{
+  "sensors": [
+    {
+      "id": 1,
+      "name": "move",
+      "description": "Sensor on the front door",
+      "type": "Sensor",
+      "status": "off",
+      "devices": [1,2,3]
+    },
+    {
+      "id": 2,
+      "name": "light",
+      "description": "Sensor in the living room",
+      "type": "Sensor",
+      "status": "off",
+      "devices": [5,6,7]
+    },
+    {
+      "id": 3,
+      "name": "move",
+      "description": "Sensor in Bedroom 1",
+      "type": "Sensor",
+      "status": "off",
+      "devices": [4]
+    },
+    {
+      "id": 4,
+      "name": "fume",
+      "description": "Sensor on the kitchen",
+      "type": "Sensor",
+      "status": "off",
+      "devices": [8,9]
+    }
+  ],
+  "subscribers": [
+    {
+      "id": 1,
+      "name": "light living room",
+      "description": "Device in the living room",
+      "type": "DeviceLights",
+      "subscriber": "True",
+      "status": "off",
+      "intensity": "High"
+    },
+    {
+      "id": 2,
+      "name": "TV living room",
+      "description": "Device in the living room",
+      "type": "DeviceTV",
+      "subscriber": "True",
+      "status": "off",
+      "proximity": 2
+    },
+    {
+      "id": 3,
+      "name": "Lamp living room",
+      "description": "Device in the living room",
+      "type": "DeviceLights",
+      "subscriber": "True",
+      "status": "off",
+      "intensity": "Low"
+    },
+    {
+      "id": 4,
+      "name": "Lamp Bedroom 1",
+      "description": "Device in the Bedroom 1",
+      "type": "DeviceLights",
+      "subscriber": "True",
+      "status": "off",
+      "intensity": "Medium"
+    },
+    {
+      "id": 5,
+      "name": "curtain living room",
+      "description": "Device in the window of the living room",
+      "type": "DeviceCurtain",
+      "subscriber": "True",
+      "status": "off",
+      "number_curtain": 2
+    },
+    {
+      "id": 6,
+      "name": "curtain Bedroom 1",
+      "description": "Device in the window of the Bedroom 1",
+      "type": "DeviceCurtain",
+      "subscriber": "True",
+      "status": "off",
+      "number_curtain": 1
+    },
+    {
+      "id": 7,
+      "name": "curtain kitchen",
+      "description": "Device in the window of kitchen",
+      "type": "DeviceCurtain",
+      "subscriber": "True",
+      "status": "off",
+      "number_curtain": 3
+    },
+    {
+      "id": 8,
+      "name": "fire alarm",
+      "description": "Device of the house",
+      "type": "DeviceFireAlarm",
+      "subscriber": "True",
+      "status": "off",
+      "minutes": 10
+    },
+    {
+      "id": 9,
+      "name": "fire email",
+      "description": "Email sends to fire team",
+      "type": "EmailSubscriber",
+      "subscriber": "False",
+      "status": "off",
+      "email": "fire@template.com"
+    }
+
+
+  ]
+}
