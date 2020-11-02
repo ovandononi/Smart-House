@@ -1,14 +1,13 @@
 import unittest
 from src.sensor import Sensor
 from src.devices import DeviceTV, DeviceLights, DeviceFireAlarm, DeviceCurtain, EmailSubscriber
-from  tests.test_data import *
+from tests.test_data import *
 
 
 class Test(unittest.TestCase):
 
     def test_turn_on_a_sensor_move(self):
-        sensor_test = Sensor(1, "move", "Sensor on the front door",
-               "Sensor", "off")
+        sensor_test = Sensor(1, "move", "Sensor on the front door", "Sensor", "off")
         device_light1 = DeviceLights(1, "light living room", "Device in the living room",
                                      "DeviceLights", "True", "off", "High")
         device_tv1 = DeviceTV(2, "TV living room", "Device in the living room",
@@ -24,16 +23,14 @@ class Test(unittest.TestCase):
         self.assertEqual(sensor_test.observers[1].__str__(), DEVICE_2)
         self.assertEqual(sensor_test.observers[2].__str__(), DEVICE_3)
 
-
     def test_turn_on_a_sensor_light(self):
-        sensor_test = Sensor(2, "light", "Sensor in the living room",
-               "Sensor", "off")
+        sensor_test = Sensor(2, "light", "Sensor in the living room", "Sensor", "off")
         device_curtain1 = DeviceCurtain(5, "curtain living room", "Device in the window of the living room",
-                                     "DeviceCurtain", "True", "off", 2)
+                                        "DeviceCurtain", "True", "off", 2)
         device_curtain2 = DeviceCurtain(6, "curtain Bedroom 1", "Device in the window of the Bedroom 1",
-                              "DeviceCurtain", "True", "off", 3)
+                                        "DeviceCurtain", "True", "off", 3)
         device_curtain3 = DeviceCurtain(7, "curtain kitchen", "Device in the window of kitchen",
-                                     "DeviceCurtain", "True", "off", 1)
+                                        "DeviceCurtain", "True", "off", 1)
         sensor_test.register(device_curtain1)
         sensor_test.register(device_curtain2)
         sensor_test.register(device_curtain3)
@@ -43,15 +40,12 @@ class Test(unittest.TestCase):
         self.assertEqual(sensor_test.observers[1].__str__(), DEVICE_2_2)
         self.assertEqual(sensor_test.observers[2].__str__(), DEVICE_2_3)
 
-
     def test_turn_on_a_sensor_fume_amd_Email(self):
-        sensor_test = Sensor(4, "fume", "Sensor on the kitchen",
-               "Sensor", "off")
-        device_fume1 = DeviceFireAlarm(8, "fire alarm", "Device of the house",
-                                     "DeviceFireAlarm", "True", "off", 10)
+        sensor_test = Sensor(4, "fume", "Sensor on the kitchen", "Sensor", "off")
+        device_fume1 = DeviceFireAlarm(8, "fire alarm", "Device of the house", "DeviceFireAlarm", "True", "off", 10)
 
         device_email2 = EmailSubscriber(9, "fire email", "Email sends to fire team",
-                                       "EmailSubscriber", "True", "off", "fire@template.com")
+                                        "EmailSubscriber", "True", "off", "fire@template.com")
 
         sensor_test.register(device_fume1)
         sensor_test.register(device_email2)
@@ -61,8 +55,7 @@ class Test(unittest.TestCase):
         self.assertEqual(sensor_test.observers[1].__str__(), DEVICE_3_2)
 
     def test_turn_off_a_sensor_move(self):
-        sensor_test = Sensor(1, "move", "Sensor on the front door",
-               "Sensor", "on")
+        sensor_test = Sensor(1, "move", "Sensor on the front door", "Sensor", "on")
         device_light1 = DeviceLights(1, "light living room", "Device in the living room",
                                      "DeviceLights", "True", "on", "High")
         device_tv1 = DeviceTV(2, "TV living room", "Device in the living room",
@@ -78,16 +71,14 @@ class Test(unittest.TestCase):
         self.assertEqual(sensor_test.observers[1].__str__(), DEVICE_4_2)
         self.assertEqual(sensor_test.observers[2].__str__(), DEVICE_4_3)
 
-
     def test_turn_off_a_sensor_light(self):
-        sensor_test = Sensor(2, "light", "Sensor in the living room",
-               "Sensor", "on")
+        sensor_test = Sensor(2, "light", "Sensor in the living room", "Sensor", "on")
         device_curtain1 = DeviceCurtain(5, "curtain living room", "Device in the window of the living room",
-                                     "DeviceCurtain", "True", "on", 2)
+                                        "DeviceCurtain", "True", "on", 2)
         device_curtain2 = DeviceCurtain(6, "curtain Bedroom 1", "Device in the window of the Bedroom 1",
-                              "DeviceCurtain", "True", "on", 3)
+                                        "DeviceCurtain", "True", "on", 3)
         device_curtain3 = DeviceCurtain(7, "curtain kitchen", "Device in the window of kitchen",
-                                     "DeviceCurtain", "True", "on", 1)
+                                        "DeviceCurtain", "True", "on", 1)
         sensor_test.register(device_curtain1)
         sensor_test.register(device_curtain2)
         sensor_test.register(device_curtain3)
@@ -97,15 +88,12 @@ class Test(unittest.TestCase):
         self.assertEqual(sensor_test.observers[1].__str__(), DEVICE_5_2)
         self.assertEqual(sensor_test.observers[2].__str__(), DEVICE_5_3)
 
-
     def test_turn_off_a_sensor_fume_amd_Email(self):
-        sensor_test = Sensor(4, "fume", "Sensor on the kitchen",
-               "Sensor", "on")
-        device_fume1 = DeviceFireAlarm(8, "fire alarm", "Device of the house",
-                                     "DeviceFireAlarm", "True", "on", 10)
+        sensor_test = Sensor(4, "fume", "Sensor on the kitchen", "Sensor", "on")
+        device_fume1 = DeviceFireAlarm(8, "fire alarm", "Device of the house", "DeviceFireAlarm", "True", "on", 10)
 
         device_email2 = EmailSubscriber(9, "fire email", "Email sends to fire team",
-                                       "EmailSubscriber", "True", "on", "fire@template.com")
+                                        "EmailSubscriber", "True", "on", "fire@template.com")
 
         sensor_test.register(device_fume1)
         sensor_test.register(device_email2)
@@ -115,8 +103,7 @@ class Test(unittest.TestCase):
         self.assertEqual(sensor_test.observers[1].__str__(), DEVICE_6_2)
 
     def test_turn_on_a_sensor_move_however_all_devices_were_unsubscribed(self):
-        sensor_test = Sensor(1, "move", "Sensor on the front door",
-               "Sensor", "off")
+        sensor_test = Sensor(1, "move", "Sensor on the front door", "Sensor", "off")
         device_light1 = DeviceLights(1, "light living room", "Device in the living room",
                                      "DeviceLights", "False", "off", "High")
         device_tv1 = DeviceTV(2, "TV living room", "Device in the living room",
@@ -133,8 +120,7 @@ class Test(unittest.TestCase):
         self.assertEqual(sensor_test.observers[2].__str__(), DEVICE_7_3)
 
     def test_turn_on_a_sensor_move_however_a_device_is_unsubscribed(self):
-        sensor_test = Sensor(1, "move", "Sensor on the front door",
-               "Sensor", "off")
+        sensor_test = Sensor(1, "move", "Sensor on the front door", "Sensor", "off")
         device_light1 = DeviceLights(1, "light living room", "Device in the living room",
                                      "DeviceLights", "False", "off", "High")
         device_tv1 = DeviceTV(2, "TV living room", "Device in the living room",

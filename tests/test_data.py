@@ -49,4 +49,3 @@ SENSOR_8 = "ID Sensor: 1  Name: move  Description: Sensor on the front door  Sta
 DEVICE_8_1 = "ID Device: 1  Name: light living room  Description: Device in the living room  Type: DeviceLights  State: off  Intensity: High"
 DEVICE_8_2 = "ID Device: 2  Name: TV living room  Description: Device in the living room  Type: DeviceTV  State: on  Proximity: 2 meters"
 DEVICE_8_3 = "ID Device: 3  Name: Lamp living room  Description: Device in the living room  Type: DeviceLights  State: off  Intensity: Low"
-

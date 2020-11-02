@@ -57,7 +57,6 @@ class DeviceFireAlarm(Device):
     def update(self, value):
         self.device_state = value
 
-
     def __str__(self):
         return '{} {}'.format(super().__str__(), " Minutes: " + str(self.minutes))
 
