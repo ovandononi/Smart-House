@@ -1,4 +1,7 @@
-class SensorManager(object):
+from src.printer import Printer
+
+
+class Sensor(object):
 
     def __init__(self, sensor_id, sensor_name, sensor_description, sensor_type, sensor_state):
         """
@@ -9,7 +12,7 @@ class SensorManager(object):
         self.sensor_description = sensor_description
         self.sensor_type = sensor_type
         self.sensor_state = sensor_state
-        self.__dict__['observers'] = []
+        self.observers = []
 
     def set_state(self, value):
         """
@@ -17,7 +20,7 @@ class SensorManager(object):
         changes when the state is updated.
         """
         self.sensor_state = value
-        self.notify_observers(value)
+        self.notify_observers()
 
     def register(self, observer):
         """
@@ -39,7 +42,9 @@ class SensorManager(object):
         update() method on each one.
         """
         for observer in self.observers:
-            observer.update(self.sensor_state)
+            if observer.is_subscriber == "True":
+                observer.update(self.sensor_state)
+            Printer().print_message(observer.__str__())
 
     def __str__(self):
         return '{} {} {} {}'.format("ID Sensor: " + str(self.sensor_id),
